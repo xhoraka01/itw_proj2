@@ -1,0 +1,913 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* SMOOTH SCROLL */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #1a1a1a;
+    background-color: #fface7;
+    font-size: 15px;
+}
+
+/* HEADINGS */
+h1, h2 , h3, h4{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* overlay */
+#imgModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* zvětšený obrázek */
+#modalImg {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+/* křížek */
+#closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    font-size: 20px;
+    width: 100%;
+    top: 0;
+
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 100;
+
+    border-bottom: 0px solid rgba(255,255,255,0.3); /* jemná hrana */
+}
+
+.nav-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-family: 'poppins', sans-serif;
+}
+
+.nav-links a:hover {
+    color: #ff4f8b;
+}
+
+.logo {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 25px;
+}
+
+.logo a {
+    color: #ff4f8b;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: #ff4f8b;
+}
+
+
+/* SECTIONS */
+section {
+    padding: 80px 0;
+    min-height: 70vh;
+    scroll-margin-top: 100px;
+}
+
+#hero {
+    background:
+        linear-gradient(to bottom, rgba(255,172,231,0) 65%, #fface7 100%),
+        url("./backround_pink.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    padding-top: 120px;
+    margin-bottom: 60px;
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(255, 0, 183, 0.3);
+    width: 400px;   
+    height: 400px;
+
+    border-radius: 50%; /* kruh */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-family: 'poppins', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.hero-content img {
+    margin-top: 120px; /* posun matného kolečka pod logem */
+}
+
+/* HERO BUTTONY */
+.hero-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px; /* posunování buttonů v menu */
+    font-size: 16px;
+}
+
+@media (max-width: 1000px) {
+    .hero-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, 160px); /* 3 sloupce */
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .hero-tabs a {
+        width: 160px;
+        text-align: center;
+    }
+
+    .hero-content img {
+        margin-top: 190px;
+    }
+}
+
+/* BUTTONY */
+.hero-tabs a {
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #f5a6c6;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    min-width: 170px;
+    text-align: center;
+}
+
+/* HOVER */
+.hero-tabs a:hover {
+    background: #ff8fc0;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* CARD */
+.card {
+    padding: 0px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* KDO JSME */
+#about {
+    padding: 80px 0px;
+}
+
+/* wrapper */
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* čáry po stranách */
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: black;
+}
+
+/* jeden řádek */
+.about-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* otočení (text vlevo, obrázek vpravo) */
+.about-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* obrázek */
+.about-img img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+/* hover efekt */
+.about-img img:hover {
+    transform: scale(1.05); /* zvětšení */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25); /* vystoupnutí */
+}
+
+/* text */
+.about-text {
+    max-width: 400px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .about-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-row.reverse {
+        flex-direction: column;
+    }
+}
+
+/* CAFE */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: black;
+}
+
+.cafe-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    padding: 10px;
+}
+
+
+/* text */
+.cafe-text {
+    max-width: 1400px;
+    text-align: center;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* obrázky vedle sebe */
+.cafe-images {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-bottom: 40px;
+
+}
+
+/* jednotlivý obrázek */
+.cafe-images img {
+    width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 25px;
+
+    transition: all 0.4s ease;
+}
+
+.cafe-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* PROJECTS */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: black;
+}
+
+#projects {
+    padding: 80px 0px;
+}
+
+.projects-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* jeden řádek */
+.project-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* text */
+.project-text {
+    flex: 1;
+}
+
+.project-text h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.project-text p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* obrázek */
+.project-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.project-img img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+
+    transition: all 0.4s ease;
+}
+
+/* hover efekt */
+.project-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 1000px) {
+    .project-row {
+        flex-direction: column; /* pod sebe */
+        text-align: center;
+    }
+
+    .project-img img {
+        width: 60%;
+        height: auto;      
+    }
+}
+
+/* FOOD */
+/* NADPIS S ČÁROU */
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+    max-width: 1000px; /* kontrola šířky */
+    margin: 0 auto 40px auto; /* centrování + odsazení */
+}
+
+/* čáry */
+.section-title::before,
+.section-title::after {
+    content: "";
+    flex: 1;
+    height: 2px;
+    background: black;
+}
+
+/* TABS */
+.food-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.food-tabs button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #f5a6c6;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.food-tabs button.active {
+    background: #ff4f8b;
+    color: white;
+}
+
+.food-tabs button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #f5a6c6;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    font-family: 'poppins', sans-serif;
+}
+
+/* AKTIVNÍ */
+.food-tabs button.active {
+    background: #ff4f8b;
+    color: white;
+}
+
+/* HOVER EFEKT */
+.food-tabs button:hover {
+    background: #ff8fc0; /* světle růžová */
+    transform: translateY(-3px); /* vystoupnutí */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* CONTENT */
+.food-content {
+    display: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.food-content.active {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 1000px) {
+    .food-content.active {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* JEDEN RECEPT */
+.food-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* OBRÁZEK */
+.food-row img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.food-row img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* TEXT */
+.food-text {
+    max-width: 400px;
+}
+
+.food-text h3 {
+    margin-bottom: 5px;
+}
+
+.food-text h4 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.food-text ul {
+    padding-left: 18px;
+}
+
+/* KOMUNITA */
+#komunita {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.community-form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    padding: 25px 30px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(255, 0, 150, 0.15);
+}
+
+/* INPUTY */
+.community-form input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.7);
+    width: 200px;
+
+    font-size: 20px;
+
+    transition: all 0.3s ease;
+}
+
+/* FOCUS efekt */
+.community-form input:focus {
+    outline: none;
+    background: white;
+
+    box-shadow: 0 0 0 2px #ff8fc0;
+    transform: translateY(-2px);
+}
+
+/* PLACEHOLDER */
+.community-form input::placeholder {
+    color: #999;
+}
+
+
+/* TLAČÍTKO */
+.community-form button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+
+    background: #ff4f8b;
+    color: white;
+
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* HOVER */
+.community-form button:hover {
+    transform: translateY(-3px) scale(1.05);
+
+    box-shadow: 0 10px 25px rgba(255, 0, 150, 0.4);
+}
+
+/* ACTIVE (kliknutí) */
+.community-form button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+
+    .community-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .community-form input {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .community-form button {
+        width: 200px;
+    }
+}
+
+.community-form button:hover {
+    background: #ff8fc0;
+    transform: translateY(-2px);
+}
+
+/* POPUP POZADÍ */
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* ZOBRAZENÍ */
+#popup.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* OKNO */
+.popup-content {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 300px;
+    position: relative;
+}
+
+/* KŘÍŽEK */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* INTRO TEXT */
+.community-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 30px auto;
+    line-height: 1.7;
+}
+
+/* ROW */
+.community-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 60px 0;
+}
+
+/* otočení */
+.community-row.reverse {
+    flex-direction: row-reverse;
+}
+
+/* IMAGE */
+.community-img img {
+    width: 450px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+
+    transition: 0.4s;
+}
+
+.community-img img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* TEXT */
+.community-text {
+    flex: 1;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* KONTAKT */
+.community-contact {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.community-contact h3 {
+    margin-bottom: 20px;
+}
+
+.community-contact p {
+    margin: 5px 0;
+}
+
+/* VIDEO */
+.video-container {
+    position: relative;
+    width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+/* PLAY BUTTON */
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background: rgba(255, 177, 237, 0.7);
+    backdrop-filter: blur(10px);
+
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.play-btn:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* CONTROLS */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: #ff4f8b;
+    border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .video-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .video-container {
+        width: 90%;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .community-row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .community-row.reverse {
+        flex-direction: column;
+    }
+
+    .community-img img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* FOOTER */
+footer {
+    background: transparent; /* žádná bílá */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-box {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 30px;
+
+    background: rgba(255, 255, 255, 0.25); /* průhledné */
+    backdrop-filter: blur(15px);           /* blur efekt */
+    -webkit-backdrop-filter: blur(15px);   /* safari fix */
+
+    border-radius: 25px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1000px) {
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        margin-top: 10px;
+    }
+}
